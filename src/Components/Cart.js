@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import {CartContext} from "../Global/CartContext";
 
 const Cart=()=>{
-    const {shoppingCart,totalPrice,qty,dispatch}=useContext(CartContext);
+    const {shoppingCart,dispatch}=useContext(CartContext);
     
     
     return(
