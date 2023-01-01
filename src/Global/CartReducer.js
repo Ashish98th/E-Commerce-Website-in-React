@@ -19,7 +19,7 @@ const{shoppingCart,totalPrice,qty}=state;
 
             return {shoppingCart:[product,...shoppingCart],totalPrice:updatePrice,qty:updateQty}
           }
-          break;
+          
 
           case 'INC':
             product=action.cart;
@@ -31,7 +31,7 @@ const{shoppingCart,totalPrice,qty}=state;
             shoppingCart[index]=product;
 
             return{shoppingCart:[...shoppingCart],totalPrice:updatePrice,qty:updateQty}
-            break;
+            
 
             case 'DEC':
               product=action.cart;
@@ -48,7 +48,8 @@ const{shoppingCart,totalPrice,qty}=state;
               }else{
                 return state;
               }
-              break;
+
+              
 
 
               case 'DELETE' :
@@ -57,7 +58,7 @@ const{shoppingCart,totalPrice,qty}=state;
               updateQty=qty-product.qty;
               updatePrice=totalPrice-product.price*product.qty;
               return {shoppingCart:[...filtered],totalPrice:updatePrice,qty:updateQty}
-              break;  
+               
 
         //   When there is no Case 
           default:
