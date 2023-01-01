@@ -1,38 +1,392 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=DynaPuff:wght@600&family=Island+Moments&family=Josefin+Sans:ital,wght@1,100&family=Roboto:ital@1&family=Rubik+Maze&family=Shadows+Into+Light&family=Signika+Negative:wght@300;400&family=Silkscreen&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:   cursive;
+}
+
+:root{
+  --mainColor: #f57224;
+  --whiteColor:#fff;
+  --blackColor:#000;
+  --lightDark:#222;
+}
+
+/* Navbar Styles */
+
+nav{
+  background: #fff;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 100px;
+  display: flex;
+  box-shadow: 0px 1px 3px rgba(0,0,0,.1);
+  position:fixed;
+  top:0;
+  z-index: 9999;
+}
+
+.left{
+width: 50%;
+  text-align: left;
+}
+
+.left a{
+  font-weight: 300;
+  font-size: large;
+  color: var(--mainColor);
+}
+.right{
+  width: 50%;
+  text-align: right;
+}
+
+ul{
+  list-style: none;
+}
+
+nav ul a{
+  text-decoration: none;
+}
+
+.shoppingCart i {
+ 
+  display: inline-block;
+  color: var(--lightDark);
+  font-size: 20px;
+  margin-right:20px;
+}
+
+.cartCount{
+  width: 35px;
+  height: 35px;
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 35px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Helpers */
+
+.container{
+  width: 100%;
+  padding: 0 100px;
+  /* border: 2px solid red; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Banner Styles */
+
+header{
+  /* border: 3px solid black; */
+  width: 100%;
+  background:url("./assets/bg.jpg");
+  height: 500px;
+  /* margin gtop 70px because navbar height is 70px  */
+  margin-top: 70px;
+  background-size: cover;
+  /* We use display flex in Parent */
   display: flex;
-  flex-direction: column;
+  /* justify content center means to center the content inside flex  */
+  /* justify-content: center; */
+
+  /* Items are positioned at the center of the container  */
   align-items: center;
+  
+  /* sets the item in center  */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(9, 5, 41);
 }
 
-.App-link {
-  color: #61dafb;
+.headerText{
+  /* 0.5 is the opacity  */
+  background: rgba(122, 105, 105, 0.5); 
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headerText h1{
+  font-size: 55px;
 }
+
+.headerText p{
+  margin-top: 10px;
+  color: yellow;
+  font-size: 20px;
+
+}
+.inner{
+  color: yellow;
+  background-color: crimson;
+  opacity: 0.8;
+  
+}
+
+/* Products Styles */
+
+.products{
+  /* border: 2px solid rgb(68, 0, 255); */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Individual Product */
+
+.product{
+  /* border: 2px solid crimson; */
+  width: 25%;
+  overflow: hidden;
+  margin: 20px 0;
+  object-fit:fill;
+  margin: 20px 0px;
+  position: relative;
+  padding: 0px 10px;
+
+  /* Padding is used to create space around an element's content, inside of any defined borders.Space around product-div-element so that its parent-products-element.
+
+ */
+}
+
+.product-image{
+  /* border: 2px solid red; */
+  height: 200px;
+  
+}
+
+.product-image img{
+  width: 100%;
+  height:100%;
+  /* object-fit: contain; */
+}
+
+.product-details{
+  /* border: 2px solid rgb(67, 8, 8); */
+  text-align: center;
+  padding: 15px 10px;
+  background: var(--whiteColor);
+  /* border-left:0.5px solid rgb(228, 219, 219);
+  border-right:0.5px solid rgb(190, 180, 180); */
+  border:0.1px solid rgb(190, 180, 180);
+  margin-top: 5px;
+  
+}
+
+.product-name{
+  font-size: 20px;
+  font-weight: 200;
+  margin: 12px 0px;
+  /* top-bottom letf-right  */
+}
+.product-price{
+  font-size: 20px;
+  font-weight: 300;
+  margin: 12px 0px;
+}
+
+.add-to-cart{
+  /* border: 2px solid black; */
+  text-align: center;
+  background-color: #f57224;
+  color: var(--whiteColor);
+  margin-top: 5px;
+  font-size:small;
+  font-weight:700;
+  cursor: pointer;
+  height: 50px;
+  padding-top: 12px;
+  text-transform: uppercase;
+  
+}
+
+.hot{
+  
+  position: absolute;
+  top:0;
+  background:orangered;
+  padding:5px 15px;
+  color: var(--whiteColor);
+}
+
+
+.new{
+  position: absolute;
+  top:0;
+  background:green;
+  padding:5px 15px;
+  color: var(--whiteColor);
+}
+
+/* .cart-container{
+  margin-top: 100px;
+} */
+
+/* Cart Styles */
+
+.cart-container{
+  
+  width: 100%;
+  padding: 0px 100px;
+  margin-top: 0px;
+ 
+  align-items: flex-start;
+  /* border: 2px solid rgb(122, 24, 122); */
+}
+
+.cart-details{
+  display: flex;
+  
+  flex-wrap: wrap;
+  width: 75%;
+  /* border: 3px solid #0f0843; */
+  border-radius: 5px;
+}
+
+.cart{
+  display: flex;
+  align-items: center;
+  /* border: 2px dotted rgb(35, 228, 35); */
+  background: var(--whiteColor);
+  padding: 15px 20px;
+}
+
+.cart-image{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+border-radius: 10px;
+object-fit: contain;
+overflow: hidden;
+  /* border: 2px dotted crimson; */
+}
+
+/* width 100% means it takes the full width of its Parent which is above  */
+
+.cart-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.cart-product-name{
+  display: inline-block;
+  width: 200px;
+  padding: 0 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cart-product-price{
+  display: inline-block;
+  width: 120px;
+  padding: 0 15px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--mainColor);
+}
+
+.inc{
+display: inline-block;
+border: 1px solid var(--mainColor);
+width: 40px;
+height: 40px;
+font-size: 14px;
+color: var(--mainColor);
+
+/* The line-height CSS property sets the height of a line box */
+
+line-height: 40px;
+text-align:center;
+border-radius: 3px;
+cursor: pointer;
+}
+
+.product-quantity{
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 15px;
+  width: 70px;
+  text-align: center;
+  /* border: 2px solid crimson; */
+}
+
+.dec{
+  display: inline-block;
+  border: 1px solid crimson;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  color: var(--mainColor);
+  
+  /* The line-height CSS property sets the height of a line box */
+  
+  line-height: 40px;
+  text-align:center;
+  border-radius: 3px;
+  cursor: pointer;
+  }
+
+  .product-total-price{
+    display: inline-block;
+    width: 150px;
+    padding: 0 15px;
+    text-align: center;
+    /* border: 2px solid green; */
+    
+  }
+
+  .delete-product{
+    border: none;
+    color: brown;
+    cursor: pointer;
+    padding: 0 15px;
+  }
+
+
+  /* Media Query */
+
+  @media(max-width:765px){
+    .headerText{
+      padding: 0 15px;
+    }
+    .headerText h1{
+      font-size: 20px;
+    }
+    .products{
+      flex-direction: column;
+    }
+    .product{
+      width: 100%;
+    }
+    .cart-container{
+      flex-direction: column;
+    }
+    .cart{
+      flex-direction: column;
+    }
+  .cart-details{
+    width: 100%;
+  }
+  .cart-product-name{
+    text-align: center;
+    padding: 15px 0px;
+  }
+  .cart-product-price{
+    padding: 15px 0px;
+  }
+  .product-quantity{
+    padding: 15px 0px;
+  }
+  .product-total-price{
+    padding: 15px 0px;
+  }
+ 
+  }
+
+ 
